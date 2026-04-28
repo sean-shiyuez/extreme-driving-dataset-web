@@ -1,7 +1,20 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python3 -c ':*)"
+      "Bash(python3 -c ':*)",
+      "Bash(bundle exec:*)",
+      "Bash(jekyll build:*)",
+      "Bash(node:*)",
+      "Bash(ruby --version)",
+      "Bash(gem --version)",
+      "Bash(gem install:*)",
+      "Bash(rbenv versions:*)",
+      "Bash(brew list:*)",
+      "Bash(ffprobe:*)",
+      "Bash(brew install:*)",
+      "Bash(ffmpeg -i Complex_Traffic_Driving1.mp4 -vcodec libx264 -crf 23 -preset fast -an -movflags +faststart Complex_Traffic_Driving1_h264.mp4 -y)",
+      "Bash(ffmpeg -i Critical_Driving2.mp4 -vcodec libx264 -crf 23 -preset fast -an -movflags +faststart Critical_Driving2_h264.mp4 -y)",
+      "Bash(ffmpeg -i snow.mp4 -vcodec libx264 -crf 23 -preset fast -an -movflags +faststart snow_h264.mp4 -y)"
     ]
   }
 }
