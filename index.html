@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Extreme Driving Dataset — Tsinghua Intelligent Chassis Team</title>
+  <meta name="description" content="A multi-modal driving dataset of critical and adverse-condition episodes — surround RGB, ZED stereo + depth, LiDAR, and vehicle dynamics, time-synchronized to a uniform 4 Hz grid. Released by the Intelligent Chassis Team, School of Vehicle and Mobility, Tsinghua University." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Extreme Driving Dataset" />
+  <meta property="og:description" content="Multi-modal episodes for critical and adverse-condition driving research — surround RGB, ZED stereo + depth, LiDAR, and vehicle dynamics at 4 Hz." />
+  <meta property="og:image" content="web_pic/platform.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,10 +19,7 @@
   <div class="page-bg"></div>
   <div class="smoke-bg" aria-hidden="true">
     <div class="smoke-blob smoke-blob-1"></div>
-    <div class="smoke-blob smoke-blob-2"></div>
     <div class="smoke-blob smoke-blob-3"></div>
-    <div class="smoke-blob smoke-blob-4"></div>
-    <div class="smoke-blob smoke-blob-5"></div>
   </div>
   <div class="grid-overlay" aria-hidden="true"></div>
 
@@ -44,13 +47,19 @@
     </div>
   </header>
 
-  <section class="hero" aria-hidden="true">
-    <img src="web_pic/platform.jpg" alt="" class="hero-img" />
+  <section class="hero">
+    <img src="web_pic/platform.jpg" alt="Tsinghua intelligent-chassis test vehicle equipped with the dataset's sensor suite" class="hero-img" />
     <div class="hero-overlay"></div>
-    <div class="hero-scanner" aria-hidden="true"></div>
+    <p class="hero-caption">Data-collection platform — Tsinghua intelligent-chassis test vehicle</p>
   </section>
 
   <main class="main-content">
+
+    <!-- Overview -->
+    <section class="overview" aria-labelledby="overview-head">
+      <h2 id="overview-head" class="section-head">Overview</h2>
+      <p class="overview-text">The <strong>Extreme Driving Dataset</strong> captures the driving that conventional datasets rarely cover — emergency and limit-handling maneuvers alongside adverse weather and low-light conditions. Each episode bundles fully <strong>time-synchronized</strong> streams: five surround RGB cameras, a ZED 2i stereo pair with per-frame dense depth, forward-facing LiDAR, and GNSS / chassis dynamics, all resampled to a uniform <strong>4 Hz</strong> grid. It spans <strong>589 episodes</strong> across <strong>6 scene categories</strong>, built to support autonomous-driving and intelligent-chassis research.</p>
+    </section>
 
     <!-- Stats bar -->
     <section class="stats-bar" aria-label="Dataset statistics">
@@ -75,30 +84,6 @@
       </div>
     </section>
 
-    <!-- Collaboration CTA -->
-    <section class="collab-cta" aria-labelledby="collab-head">
-      <div class="collab-ambient"></div>
-      <div class="collab-glow"></div>
-      <div class="collab-inner">
-        <div class="collab-badge">
-          <span class="collab-badge-dot"></span>
-          Partnership
-        </div>
-        <h2 id="collab-head" class="collab-title">
-          <span class="collab-label">Global Collaboration</span>
-          Seeking worldwide partners
-        </h2>
-        <p class="collab-mission">We invite global collaborators to jointly develop <strong>fusion datasets</strong> for autonomous driving and intelligent chassis, and algorithms for <strong>dataset development and utilization</strong>.</p>
-        <ul class="collab-assets">
-          <li>Real-vehicle data collection and closed-loop verification platform</li>
-          <li>In-house server: 8× NVIDIA RTX 5090 GPUs</li>
-          <li>Broad industry partnerships for validation and deployment</li>
-        </ul>
-        <p class="collab-interns">We are recruiting <strong>interns in computer science</strong>, with a stipend of <strong>100–300 RMB per day</strong> and support for <strong>industry and academic recommendations</strong>.</p>
-        <p class="collab-contact">Interested in co-development, data partnership, or internships? <a href="mailto:Stary132@163.com">Contact us</a></p>
-      </div>
-    </section>
-
     <!-- Sensor configuration -->
     <section class="sensor-intro">
       <h2 class="section-head">Sensor Configuration</h2>
@@ -113,14 +98,14 @@
       <div class="sensor-visual">
         <div class="sensor-visual-frame">
           <img src="web_pic/Sensor_setting.png" alt="Sensor layout and configuration" class="sensor-img" />
-          <div class="sensor-scan-line" aria-hidden="true"></div>
         </div>
       </div>
     </section>
 
     <!-- Scene category intro -->
-    <section class="intro">
-      <p class="intro-text">Select a scene category to explore. Each episode contains fully synchronized multi-sensor streams — surround RGB, ZED stereo + depth, LiDAR, and vehicle dynamics — resampled to a uniform <strong>4 Hz</strong> grid.</p>
+    <section class="intro" aria-labelledby="scenes-head">
+      <h2 id="scenes-head" class="section-head">Scene Categories</h2>
+      <p class="intro-text">Six scene categories span everyday driving through safety-critical and adverse conditions. Each episode contains fully synchronized multi-sensor streams — surround RGB, ZED stereo + depth, LiDAR, and vehicle dynamics — resampled to a uniform <strong>4 Hz</strong> grid. Select any category to open dataset access.</p>
     </section>
 
     <!-- Scene condition cards -->
@@ -268,6 +253,30 @@
         <button class="demo-clip active" data-clip="0">Clip 1</button>
         <button class="demo-clip" data-clip="1">Clip 2</button>
         <button class="demo-clip" data-clip="2">Clip 3</button>
+      </div>
+    </section>
+
+    <!-- Collaboration CTA -->
+    <section class="collab-cta" aria-labelledby="collab-head">
+      <div class="collab-ambient"></div>
+      <div class="collab-glow"></div>
+      <div class="collab-inner">
+        <div class="collab-badge">
+          <span class="collab-badge-dot"></span>
+          Partnership
+        </div>
+        <h2 id="collab-head" class="collab-title">
+          <span class="collab-label">Global Collaboration</span>
+          Seeking worldwide partners
+        </h2>
+        <p class="collab-mission">We invite global collaborators to jointly develop <strong>fusion datasets</strong> for autonomous driving and intelligent chassis, and algorithms for <strong>dataset development and utilization</strong>.</p>
+        <ul class="collab-assets">
+          <li>Real-vehicle data collection and closed-loop verification platform</li>
+          <li>In-house server: 8× NVIDIA RTX 5090 GPUs</li>
+          <li>Broad industry partnerships for validation and deployment</li>
+        </ul>
+        <p class="collab-interns">We are recruiting <strong>interns in computer science</strong>, with a stipend of <strong>100–300 RMB per day</strong> and support for <strong>industry and academic recommendations</strong>.</p>
+        <p class="collab-contact">Interested in co-development, data partnership, or internships? <a href="mailto:Stary132@163.com">Contact us</a></p>
       </div>
     </section>
 
