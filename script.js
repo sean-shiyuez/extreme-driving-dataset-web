@@ -1,6 +1,41 @@
 (function () {
   'use strict';
 
+  /* ----- Theme toggle: default follows system, click overrides + persists ----- */
+  var themeToggle = document.getElementById('theme-toggle');
+  if (themeToggle) {
+    var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)');
+
+    function effectiveTheme() {
+      var forced = document.documentElement.getAttribute('data-theme');
+      if (forced === 'light' || forced === 'dark') return forced;
+      return prefersLight && prefersLight.matches ? 'light' : 'dark';
+    }
+
+    function syncLabel() {
+      themeToggle.setAttribute(
+        'aria-label',
+        effectiveTheme() === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'
+      );
+    }
+
+    themeToggle.addEventListener('click', function () {
+      var next = effectiveTheme() === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('eddw-theme', next); } catch (e) {}
+      syncLabel();
+    });
+
+    // Keep the label in sync with the OS while in auto (no explicit override) mode.
+    if (prefersLight && prefersLight.addEventListener) {
+      prefersLight.addEventListener('change', function () {
+        if (!document.documentElement.getAttribute('data-theme')) syncLabel();
+      });
+    }
+
+    syncLabel();
+  }
+
   var CAROUSEL_INTERVAL = 4000;
   var CLICK_ANIM_DURATION = 500;
   var CAROUSEL_TRANSITION_MS = 580;
